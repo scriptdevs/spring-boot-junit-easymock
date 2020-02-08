@@ -1,25 +1,23 @@
 package com.apps.controller;
 
-import java.io.IOException;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.apps.service.MainService;
 
 @Controller
 public class MainController {
- 
-			
-	/*
-	 * Returns a simple message
-	 *
-	 */
-	@GetMapping("/")
-	public String getPage() {
-						
-		return "index";
 
-	}
+    @Autowired
+    MainService mainService;
+    
+    /*
+     * Returns a simple message
+     */
+    @GetMapping("/")
+    public String getPage() {
+        return "index";
+    }
 
 }
